@@ -15,7 +15,7 @@
      \fancyhf{} % clear all header and footer fields
      \fancyfoot[R]{}
      \fancyfoot[L]{\thedate}
-     \fancyhead[L]{Int. a la Investigación Experimental}
+     \fancyhead[L]{Introducción a la Investigación Experimental}
      \fancyhead[R]{\theauthor}
  }
 \setlength{\headheight}{13pt}

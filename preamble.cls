@@ -36,3 +36,5 @@
  
  \usepackage{lipsum}  
  \usepackage{cmbright}
+ \usepackage{hyperref}
+ \usepackage{lmodern}

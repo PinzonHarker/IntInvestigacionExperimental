@@ -15,17 +15,47 @@
 
 \section*{Objetivos}
 \begin{enumerate}
-    \item Verificar la constante de difusividad de diferentes materiales a
-    partir de la Teoría de Einstein para el movimiento browniano.
-    \item Verificar la ley de Fick para Difusividad respecto el tiempo.
+    \item Verificar la constante de difusividad de diferentes sustancias (tinta) a partir de la Teoría de Einstein para el movimiento browniano con variaciones de temperatura.
+    \item Verificar la ley de Fick para Difusividad respecto el tiempo y el espacio en dos dimensiones.
 \end{enumerate}
 
-\section*{Objectives}
-\lipsum[3-3]
+\section*{Marco Teórico}
+La \textbf{difusión} es el transporte de materia de un punto a otro mediante el movimiento térmico de átomos o moléculas~\cite{mehrerHistoryBibliographyDiffusion2007} impulsadas a través de la interacción por los gradientes de concentración descritos empíricamente en primer lugar por las \textbf{leyes de Fick}~\cite{gilExperimentosFisicaUsando2014}. La difusión es un fenómeno físico termodinámico gobernado por interacciones mecánico cuánticas atribuidas de la Teoría de Einstein sobre el movimiento browniano~\cite{einsteinUberMolekularkinetischenTheorie1905} que justifican la dinámica de la ley de Fick, es responsable de la mezcla de gases, líquidos y solidos de manera espontanea sin que ocurra un movimiento macroscópico del sistema como lo puede ser la convección, el medio se homogeneizará en un estado donde la densidad de concentración de la sustancia en ese medio tenderá a disminuir en el espacio y el tiempo~\cite{gilExperimentosFisicaUsando2014}.
 
-\section*{Plan}
-\lipsum[4-4]
+La primera ley de Fick~\cite{gilExperimentosFisicaUsando2014} relaciona los flujos de partículas por unidad de área $\mathbf{J}$ y los gradientes de concentración $\nabla \mathbf{n}$ en la ec. \ref{eq:fick1}:
+\begin{equation}
+    \mathbf{J} = -D \nabla \mathbf{n},
+    \label{eq:fick1}
+\end{equation}
+donde $n\equiv n(x,y,z;t)$ es la concentración del soluto, generalmente cantidad en mol o número de partículas por unidad de volumen; $\mathbf{J}\equiv\mathbf{J}(t)$ es el flujo de partículas o moles por unidad de área; y por último $D$ es el coeficiente de \textit{difusividad} que en general dependerá de distintas condiciones  detalladas por la Teoría de Einstein-Stokes.
+La segunda ley de Fick es descrita a partir de la ecuación de continuidad del fluido en un elemento infinitesimal de volumen $\Delta V$ que relaciona el flujo del material respecto el tiempo a partir de la ec.~\ref{eq:fick1.5}
+\begin{equation}
+    \nabla \mathbf{J} = -\frac{\partial n}{\partial t},
+    \label{eq:fick1.5}
+\end{equation}
+% sería bueno determinar teóricamente este valor.
+que da forma a la difusión o segunda ley de Fick en ec.~\ref{eq:fick2}
+\begin{equation}
+    \frac{\partial n}{\partial t} = D \nabla^2 n.
+    \label{eq:fick2}
+\end{equation}
+
+Es esencial destacar la aportación de la Teoría de Einstein-Stokes~\cite{einsteinUberMolekularkinetischenTheorie1905} que relaciona el coeficiente de difusividad $D$ con la temperatura $T$ y el radio de la partícula $r$ en la ec. \ref{eq:einstein} para la suposición de movimiento browniano en un fluido newtoniano a temperatura constante en un medio isótropo~\cite{leeInkDifussionWater2004}
+\begin{equation}
+    D = \frac{k_B T}{6 \pi \eta r},
+    \label{eq:einstein}
+\end{equation}
+donde $k_B$ es la constante de Boltzmann y $\eta$ es la viscosidad del medio. La ec. \ref{eq:einstein} describe el movimiento browniano de una partícula en un fluido, donde el coeficiente de difusividad $D$ es inversamente proporcional a la viscosidad del medio y directamente proporcional a la temperatura.
+
+Aplicando la ecuación de Fick a un medio bidimensional, la solución de la ecuación diferencial parcial por método de separación de variables~\cite{gilExperimentosFisicaUsando2014} queda descrita en La ec. \ref{eq:fick2d}
+\begin{equation}
+    n(r,t) = \frac{A_0}{2 D t} \exp{\left\{-\frac{r^2}{4Dt}\right\}},
+    \label{eq:fick2d}
+\end{equation}
+donde $N$ es el número de partículas iniciales, $r$ es el radio euclidiano ($r^2 = x^2 + y^2$) son las coordenadas del espacio, $t$ es el tiempo y $D$ es el coeficiente de difusividad. 
 
 
 
+\bibliographystyle{IEEEtran}
+\bibliography{references}
 \end{document}

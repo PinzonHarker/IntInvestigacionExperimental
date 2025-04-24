@@ -9,15 +9,21 @@
  }
  \usepackage{graphicx}
  \usepackage{titling}
-
  \usepackage{fancyhdr}
- \fancypagestyle{plain}{%  the preset of fancyhdr 
-     \fancyhf{} % clear all header and footer fields
-     \fancyfoot[R]{}
-     \fancyfoot[L]{\thedate}
-     \fancyhead[L]{Introducción a la Investigación Experimental}
-     \fancyhead[R]{\theauthor}
- }
+\pagestyle{fancy}
+\fancyhf{} % clear default fields
+\fancyhead[L]{Introducción a la Investigación Experimental}
+\fancyhead[R]{\theauthor}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+% Ensure the same header on pages that LaTeX marks as "plain"
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{Introducción a la Investigación Experimental}
+  \fancyhead[R]{\theauthor}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
 \setlength{\headheight}{13pt}
  \makeatletter
  \def\@maketitle{%

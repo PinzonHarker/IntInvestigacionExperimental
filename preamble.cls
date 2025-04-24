@@ -38,3 +38,5 @@
  \usepackage{cmbright}
  \usepackage{hyperref}
  \usepackage{lmodern}
+ \usepackage{siunitx}
+ \decimalpoint

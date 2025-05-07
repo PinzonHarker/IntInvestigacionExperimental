@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{xcolor} % Ensure xcolor is loaded for color definitions
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage[spanish]{babel}
+
+\begin{document}
+
+\begin{center}
+\begin{tikzpicture}
+
+% --- Vista lateral ---
+\node at (-6,6) {\textbf{Vista lateral}};
+
+% Soporte y cámara
+\draw[gray, thick] (-8,4.5) -- (-8,1); % soporte vertical
+\draw[gray, thick] (-8,4.5) -- (-5.5,4.5); % brazo soporte
+
+\draw[fill=gray!60] (-6.3,4.3) rectangle (-5.7,4.7); % base de cámara
+\draw[fill=black!40] (-6,4.2) circle (0.2); % lente
+\draw[fill=blue!60] (-6,4.2) circle (0.1); % lente interna
+
+\node at (-5.6,4.9) {Cámara};
+
+% Termómetro
+\draw[fill=yellow!60] (-7.7,2.8) rectangle (-7.5,4); 
+\foreach \y in {2.9,3.0,...,3.9} {
+  \draw (-7.7,\y) -- (-7.5,\y);
+}
+\node[align=center] at (-7.6,4.2) {Termómetro};
+
+% Bandeja
+\draw[fill=blue!30] (-7,2.5) rectangle (-4,3.2);
+\node at (-5.5,3.4) {\shortstack{Bandeja\\con agua}};
+
+% Soporte bandeja
+\draw[fill=purple!50] (-7,2.3) rectangle (-4,2.5);
+\draw[fill=purple!70] (-6.8,2.1) rectangle (-6.6,2.3);
+\draw[fill=purple!70] (-4.2,2.1) rectangle (-4,2.3);
+
+% Baño de agua
+\draw[fill=purple!30] (-7.5,1) rectangle (-3.5,2.3);
+\node at (-5.5,1.8) {\shortstack{Bandeja\\con agua}};
+
+% Piso
+\draw[fill=gray!20] (-8.5,1) rectangle (-3,0.8);
+
+% --- Vista superior ---
+\node at (3,6) {\textbf{Vista superior}};
+
+% Bandeja circular
+\draw[fill=blue!30] (3,3) circle (2.3);
+\node at (5.2,3.2) {\shortstack{Bandeja\\con agua}};
+\node at (3,0.5) {Agua};
+
+% Mancha
+\draw[fill=purple!40, opacity=0.8] (3,3) circle (0.8);
+\draw[draw=magenta, thick] (3,3) circle (1);
+
+\draw[->, thick, color=green!60!black] (3,3) -- (3.8,3.0); % Explicitly specify color
+\node[green!60!black, anchor=south west] at (3.5,3) {\(r\)};
+
+% Mancha texto
+\draw[->, thick, green] (2.5,3.5) -- (3,3.3);
+\node[green!60!black] at (2.2,3.6) {Mancha};
+
+% Escala referencia
+\draw[fill=green!10, thick] (1.5,5.5) rectangle (3,5.8);
+\foreach \x in {1.6,1.7,...,2.9} {
+  \draw (\x,5.5) -- (\x,5.8);
+}
+\node[green!50!black] at (3.8,5.7) {Escalas de\\referencia};
+
+\draw[fill=green!10, thick] (1.8,3.7) rectangle (2.0,4.8);
+\foreach \y in {3.8,3.9,...,4.7} {
+  \draw (1.8,\y) -- (2.0,\y);
+}
+
+% Cronómetro
+\draw[fill=green!20, thick] (5.5,1.5) -- (6.7,1.5) -- (6.9,1.8) -- (6.7,2.1) -- (5.5,2.1) -- (5.3,1.8) -- cycle;
+\node at (6.1,1.8) {\textbf{mm.ss}};
+\node at (6.1,2.3) {Cronómetro};
+
+\end{tikzpicture}
+\end{center}
+
+\end{document}
